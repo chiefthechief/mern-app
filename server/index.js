@@ -6,9 +6,9 @@ const url = "mongodb+srv://cujothechief:14343297332@cluster0.u7bbr2v.mongodb.net
 const studentRoutes = require("./routes/student.js");
 
 const app = express();
+app.use(cors());
 app.use(bodyParser.json({ limit: "20mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "20mb", extended: true }));
-app.use(cors());
 app.use("/students", studentRoutes);
 // const PORT = process.env.PORT || 5000;
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
